@@ -106,9 +106,10 @@ namespace wsCheckUsuario
 
         protected async void Button1_Click(object sender, EventArgs e)
         {
+           
             //ejecucion asincrona del metodo cargaDatosApi()
             await cargaDatosApi();
-
         }
+
     }
 }

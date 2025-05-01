@@ -1,7 +1,9 @@
 ﻿<%@ Page Async="true" Title="" Language="C#" MasterPageFile="~/mpPrincipal.Master" AutoEventWireup="true" CodeBehind="Formulario web2.aspx.cs" Inherits="wsCheckUsuario.Formulario_web2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="file:///c:\users\sotoa\source\repos\wscheckusuario\wscheckusuario\bootstrap\css\bootstrap.min.css" rel="stylesheet" />
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 </asp:Content>
+
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="container">    
@@ -18,7 +20,7 @@
             </td>
             <td width="70%">
 
-                <asp:TextBox ID="TextBox1" runat="server" MaxLength="3" Width="262px"></asp:TextBox>
+                <asp:TextBox ID="TextBox1" runat="server" MaxLength="3" Width="50px"></asp:TextBox>
 
             </td>
         </tr>
@@ -66,7 +68,7 @@
             </td>
             <td width="70%">
 
-                <asp:TextBox ID="TextBox5" runat="server" MaxLength="8" Width="170px"></asp:TextBox>
+                <asp:TextBox ID="TextBox5" runat="server" MaxLength="8" Width="297px"></asp:TextBox>
 
             </td>
         </tr>
@@ -78,7 +80,7 @@
             </td>
             <td width="70%">
 
-                <asp:TextBox ID="TextBox6" runat="server" MaxLength="8" Width="169px"></asp:TextBox>
+                <asp:TextBox ID="TextBox6" runat="server" MaxLength="8" Width="297px"></asp:TextBox>
 
             </td>
         </tr>
@@ -91,7 +93,7 @@
             </td>
             <td width="70%">
 
-                <asp:TextBox ID="TextBox7" runat="server" MaxLength="200" Width="175px" OnTextChanged="TextBox7_TextChanged"></asp:TextBox>
+                <asp:TextBox ID="TextBox7" runat="server" MaxLength="30" Width="294px"></asp:TextBox>
 
             </td>
         </tr>
@@ -105,7 +107,7 @@
             <td width="70%">
 
 
-                <asp:DropDownList ID="DropDownList1" runat="server" Width="241px">
+                <asp:DropDownList ID="DropDownList1" runat="server" Width="166px">
                 </asp:DropDownList>
 
 

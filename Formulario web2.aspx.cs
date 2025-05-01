@@ -1,16 +1,16 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
 using wsCheckUsuario.Models;
-using System.Text;
 
 namespace wsCheckUsuario
 {
@@ -18,10 +18,18 @@ namespace wsCheckUsuario
     {
         protected async void Page_Load(object sender, EventArgs e)
         {
-            //
-            await cargaDatosTipoUsuario();
-            // Creación del método asíncrono para ejecutar el
-        }        // endpoint vwTipoUsuario
+            // validacion de 1er carga de página (postBack)
+            if (Page.IsPostBack == false)
+            {
+                //llamamos el metodo
+                await cargaDatosTipoUsuario();
+            }
+
+        }
+
+
+        // Creación del método asíncrono para ejecutar el
+        // endpoint vwTipoUsuario
         private async Task cargaDatosTipoUsuario()
         {
             try
@@ -65,10 +73,9 @@ namespace wsCheckUsuario
                 Response.Write("<script language='javascript'>" +
                                "alert('Error de la aplicación, intentar nuevamente');" +
                                "</script>");
-
             }
-
         }
+
         // Creación del método asíncrono para ejecutar el
         // endpoint spInsUsuario
         private async Task cargaDatos()
@@ -91,7 +98,7 @@ namespace wsCheckUsuario
                     HttpContent contenido = new StringContent
                                 (data, Encoding.UTF8, "application/json");
                     // Ejecución de la petición HTTP
-                    string apiUrl = "https://localhost:44349/check/usuario/spinsusuario";
+                    string apiUrl = "https://localhost:44354/check/usuario/spinsusuario";
                     // ----------------------------------------------
                     HttpResponseMessage respuesta =
                         await client.PostAsync(apiUrl, contenido);
@@ -151,9 +158,74 @@ namespace wsCheckUsuario
             }
         }
 
+
+
         protected async void Button1_Click(object sender, EventArgs e)
         {
-            await cargaDatos();
+            // NOmbre
+            if (TextBox2.Text == "")
+            {
+                Response.Write("<script language='javascript'>" +
+                               "alert('El nombre está vacío');" +
+                               "</script>");
+            }
+            else
+            {
+                //APELLIDO Pat
+                if (TextBox3.Text == "")
+                {
+                    Response.Write("<script language='javascript'>" +
+                                   "alert('El apellido paterno está vacío');" +
+                                   "</script>");
+                }
+                else
+                {
+                    //APELLIDO MATERNO
+                    if (TextBox4.Text == "")
+                    {
+                        Response.Write("<script language='javascript'>" +
+                                       "alert('El apellido materno está vacío');" +
+                                       "</script>");
+                    }
+                    else
+                    {
+                        //USUARIO
+                        if (TextBox5.Text == "")
+                        {
+                            Response.Write("<script language='javascript'>" +
+                                           "alert('El usuario está vacío');" +
+                                           "</script>");
+                        }
+                        else
+                        {
+                            //CONTRASEÑA
+                            if (TextBox6.Text == "")
+                            {
+                                Response.Write("<script language='javascript'>" +
+                                               "alert('La contraseña está vacía');" +
+                                               "</script>");
+                            }
+                            else
+                            {
+                                //RUTA FOTO
+                                if (TextBox7.Text == "")
+                                {
+                                    Response.Write("<script language='javascript'>" +
+                                                   "alert('La ruta está vacía');" +
+                                                   "</script>");
+                                }
+                                else
+                                {
+                                    //ejecucion asincrona del metodo d inserción de datos
+                                    await cargaDatos();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
 
         }
     }
