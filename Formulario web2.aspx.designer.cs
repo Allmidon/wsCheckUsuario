@@ -42,6 +42,15 @@ namespace wsCheckUsuario
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
 
         /// <summary>
+        /// Control ImageButton5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton5;
+
+        /// <summary>
         /// Control Label9.
         /// </summary>
         /// <remarks>

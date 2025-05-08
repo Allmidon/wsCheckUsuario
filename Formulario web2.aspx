@@ -22,6 +22,8 @@
 
                 <asp:TextBox ID="TextBox1" runat="server" MaxLength="3" Width="50px"></asp:TextBox>
 
+                <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="~/imagenes/icon_logalum.GIF" OnClick="ImageButton5_Click" />
+
             </td>
         </tr>
         <tr>
@@ -119,9 +121,9 @@
                 <br />
                 <asp:Button ID="Button1" runat="server" Text="Registrar" CssClass="btn btn-primary" OnClick="Button1_Click" />
                 &nbsp;
-                <asp:Button ID="Button2" runat="server" Text="Modificar" CssClass="btn btn-warning" />
+                <asp:Button ID="Button2" runat="server" Text="Modificar" CssClass="btn btn-warning" OnClick="Button2_Click" />
                 &nbsp;
-                <asp:Button ID="Button3" runat="server" Text="Eliminar"  CssClass="btn btn-danger" />
+                <asp:Button ID="Button3" runat="server" Text="Eliminar"  CssClass="btn btn-danger" OnClick="Button3_Click" />
                 <br />
             </td>
         </tr>
